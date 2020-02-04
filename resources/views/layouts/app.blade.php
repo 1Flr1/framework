@@ -49,6 +49,12 @@
                                 </li>
                             @endif
                         @else
+
+                            <li class="nav-item">
+                                <a id="navbarUsers" class="nav-link" role="button" href="{{ url('liste_users') }}">
+                                {{ __('Utilisateurs') }}
+                                </a>
+                            </li>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
@@ -60,12 +66,9 @@
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        @csrf
-                                    </form>
                                 </div>
                             </li>
+                            
                         @endguest
                     </ul>
                 </div>

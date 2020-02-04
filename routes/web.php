@@ -18,7 +18,16 @@ Route::get('1', function () {
     return 'welcome';
 });
 
+Route::get('liste_users', function () {
+    $utilisateurs = App\User::all();
+    return view('liste_users', [
+        'liste' => $utilisateurs
+    ]);
+});
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/home', 'UserController@afficher');
+
+// Route::get('/liste_users', 'UserController@afficher_liste');
